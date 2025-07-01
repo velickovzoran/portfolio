@@ -1,0 +1,625 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: #526D82;
+    color: #feffff;
+    font-family: "Montserrat Medium", Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+span {
+    color: #FF6500;
+    text-shadow: #353535 2px 1px 6px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    transition: all .55s ease;
+    background: rgba(33, 52, 72, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+}
+
+.logo {
+    font-size: 1.7rem;    /*25px*/
+    font-weight: 700;
+    color: #feffff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navlist {
+    display: flex;
+    justify-content: center;
+}
+
+.navlist a {
+    font-size: 1rem;        /*15px*/
+    font-weight: 500;
+    color: #feffff;
+    margin: 40px;
+    transition: all .50s ease;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.navlist a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #FF6500;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+}
+
+.navlist a:hover::after, .navlist a.active::after {
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    width: 100%;
+    background: url("images/portfolio picture.png"), url("images/waves.png");
+    background-position: bottom right, center;
+    background-size: 60vh, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.main-content {
+    padding: 0 8% 12% 8%;
+}
+
+.main-content h4 {
+    font-size: 2.5rem;        /*30px*/
+}
+
+.main-content h1 {
+    font-size: 4.5rem;        /*65px*/
+}
+
+#school {
+    scroll-margin-top: 60px;
+}
+
+#skills {
+    scroll-margin-top: 40px;
+}
+
+#projects {
+    scroll-margin: 60px;
+}
+
+.school {
+    background-color: #e5e5e5;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #212121;
+    flex-wrap: nowrap;
+}
+
+.school h1 {
+    font-size: 3rem;            /*50px*/
+    text-align: center;
+    margin: 20px 0;
+}
+
+.dve {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.karticka {
+    border-radius: 20px;
+    background-color: #ffffff;
+    width: 45%;
+    height: 180px;
+    margin: 20px;
+    padding: 20px;
+    text-align: right;
+    align-content: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;            /*18px*/
+    flex-wrap: nowrap;
+    color: #213448;
+    transition: width 0.3s;
+}
+
+.karticka:hover {
+    width: 48%;
+    box-shadow: 3px 3px 20px gray;
+    transition: all .55s ease;
+}
+
+.skills {
+    width: 100%;
+    min-height: 40vh;
+    background-color: #213448;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills h1 {
+    width: 100%;
+    font-size: 3rem;            /*50px*/
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    border-radius: 20px;
+    background-color: #feffff;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    border-radius: 20px;
+    transition: .5s ease;
+    background-color: coral;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 1.5rem;            /*20px*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.projects {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.projects h1 {
+    font-size: 3rem;            /*50px*/
+    text-align: center;
+    margin: 30px 0px;
+    color: #f7f7f7;
+    font-weight: bolder;
+    text-shadow: 3px 3px 5px #353535;
+}
+
+.info1 {
+    text-align: left;
+    font-size: 1.5rem;            /*25px*/
+}
+
+.info2 {
+    text-align: right;
+    font-size: 1.5rem;          /*25px*/
+}
+
+#iphones {
+    display: inline-block;
+    width: 50vh;
+    height: auto;
+}
+
+#macbook {
+    display: inline-block;
+    width: 60vh;
+    height: auto;
+    object-fit: contain;
+}
+
+iframe {
+    display: inline-block;
+    margin: 20px;
+}
+
+.video-vertical {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    max-height: 100px;
+    padding-bottom: 40.5%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.video-vertical iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    border: none;
+    display: inline-block;
+}
+
+.flaer img {
+    width: 350px;
+    height: 500px;
+}
+
+.projects h2 {
+    margin-bottom: 20px;
+    color: #f7f7f7;
+    font-weight: bold;
+    text-shadow: 3px 3px 30px #353535;
+}
+
+.row1,
+.row2,
+.row3,
+.row4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 8%;
+}
+
+.contact {
+    min-height: 20vh;
+    background-color: #213448;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact a{
+    text-decoration: none;
+    color: #feffff;
+}
+
+.icon {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+}
+
+.firstrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+footer{
+    background-color: #213448;
+    text-align: center;
+    font-size: 0.7rem;                /*10px*/
+}
+
+@media (max-width: 900px) {
+    html{
+        font-size: 14px;
+    }
+    
+    header .navlist{
+        position: relative;
+    }
+
+    header .navlist a{
+        font-size: 1.1rem;
+        padding: 10px 0;
+        margin: 10px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .navlist a::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background: #FF6500;
+        transition: width 0.3s;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        z-index: 1;
+    }
+
+    .navlist a:hover::after, .navlist a.active::after {
+        width: 100%;
+    }
+
+    #school {
+        scroll-margin-top: 3rem;
+    }
+
+    #skills {
+        scroll-margin-top: 3rem;
+    }
+
+    #projects {
+        scroll-margin: 3rem;
+    }
+
+    .hero{
+        background: url("images/gradient portfolio.png"), url("images/waves.png");
+        background-repeat: no-repeat;
+        background-size: 60vh, cover;
+        background-position: bottom right, center;
+    }
+
+    .main-content h4 {
+        font-size: 3rem;        /*30px*/
+    }
+
+    .main-content h1 {
+        font-size: 4.5rem;        /*65px*/
+    }
+
+    .main-content p {
+        font-size: 2rem;
+    }
+
+    .school h1 {
+        font-size: 4rem;
+    }
+
+    .skills h1{
+        font-size: 4rem;
+        margin: 20px 0;
+    }
+
+    .projects h1 {
+        font-size: 4rem;
+        padding: 0 8%;
+    }
+
+    .dve{
+        flex-direction: column;
+    }
+
+    .karticka {
+        width: 80%;
+        font-size: 1.5rem;
+    }
+
+    .karticka:hover {
+        width: 88%;
+    }
+
+    .skills{
+        padding: 0 20%;
+    }
+
+    .info1, .info2{
+        font-size: 1.2rem;
+    }
+
+    .row1,
+    .row2,
+    .row3,
+    .row4 {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #iphones, #macbook {
+        max-width: 300px;
+        width: 40vw;
+        height: auto;
+    }
+
+    .flaer img{
+        max-width: 200px;
+        width: 40vw;
+        height: auto;
+    }
+
+    .video-vertical {
+        width: 100%;
+        max-width: 80vw;
+        padding-bottom: 56.25%;
+        padding-left: 20%;
+    }
+
+    .row3{
+        flex-direction: row;
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .video-vertical iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+@media  (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+
+    header .navlist a{
+        display: none;
+    }
+
+    .hero{
+        background: url("images/gradient portfolio.png"), url("images/waves.png");
+        background-repeat: no-repeat;
+        background-size: 60vh, cover;
+        background-position: bottom right, center;
+    }
+
+    .main-content h4 {
+        font-size: 2rem;        /*30px*/
+    }
+
+    .main-content h1 {
+        font-size: 3.5rem;        /*65px*/
+    }
+
+    .main-content p {
+        font-size: 1.5rem;
+    }
+
+    .school h1 {
+        font-size: 3.5rem;
+    }
+
+    .skills h1{
+        font-size: 3.5rem;
+    }
+
+    .projects h1 {
+        font-size: 3.5rem;
+        padding: 0 8%;
+    }
+
+    .skills{
+        padding: 0;
+    }
+
+    .info1, .info2{
+        order: 1;
+        font-size: 2rem;
+        padding: 0 5vw;
+        text-align: center;
+    }
+
+    .row1,
+    .row2,
+    .row3,
+    .row4 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        margin: 2rem 0;
+
+    }
+
+    #iphones, #macbook {
+        width: 90vw;
+        max-width: 260px;
+        height: auto;
+    }
+
+    .flaer img{
+        max-width: 350px;
+        width: 60vw;
+        height: auto;
+
+    }
+
+    iframe{
+        height: 40vh;
+    }
+
+    .img-wrap {
+        order: 2;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact {
+        min-height: 30vh;
+        height: auto;
+    }
+
+    .firstrow{
+        flex-direction: column;
+    }
+
+    .icon{
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    html{
+        font-size: 10px;
+    }
+
+    header .navlist a{
+        display: none;
+    }
+
+    header {
+        height: 12vh;
+    }
+}
