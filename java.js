@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".navlist a");
     const navbar = document.querySelector('header');
-    const navbarHeight = navbar ? navbar.offsetHeight : 80; // ако не најде header, default 80
+    const navbarHeight = navbar ? navbar.offsetHeight : 80;
 
     function activateNavLink() {
         let scrollY = window.pageYOffset;
         let found = false;
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - navbarHeight - 5; // +5px толеранција
+            const sectionTop = section.offsetTop - navbarHeight - 5;
             const sectionHeight = section.offsetHeight;
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 navLinks.forEach(link => {
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Ако не е најдена секција, провери дали сме на дното и активирај „Контакт“
         if (!found) {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
                 navLinks.forEach(link => {
@@ -36,5 +35,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.addEventListener("scroll", activateNavLink);
-    activateNavLink(); // За да работи и при reload
+    activateNavLink();
 });
